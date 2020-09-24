@@ -399,7 +399,7 @@ header>.container>.brand,header > .fill > .container > .brand {
 	text-align: center;
 	padding-left: 0;
 	text-decoration: none;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	line-height: 60px;
 	cursor: default
 	vertical-align: text-bottom;
@@ -423,10 +423,7 @@ header>.container>a[class=brand]:after,header > .fill > .container > a[class="br
 	background-color: #ff7d60!important;
 	color: #fff
 }
-.notice {
-  background-color: #ef6b2d !important;
-  color: #fff !important;
-}
+
 .success {
 	background-color: #68d668!important;
 	color: #000
@@ -699,16 +696,21 @@ header>.container>a[class=brand]:after,header > .fill > .container > a[class="br
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active > a {
+ /* border-left: #ffffff 15px solid; */
 	color: #FFD700
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > li:hover {
-	background: #525
+       /* border-left: #ffffff 3px solid;
+	color: white; */
+	background: #525;
 }
 
 .main > .main-left > .nav > .slide > .slide-menu > .active:hover {
+   /* border-left: #ffffff 3px solid; 
+	color: white;*/
 	background-color: #525;
-	cursor: hand
+	cursor: hand;
 }
 
 li {
@@ -972,11 +974,8 @@ form.inline + form.inline,
 
 .cbi-button-reset,
 .cbi-input-remove {
-  color: #fff !important;
-	background: #d83c88;
+	background-color:  #d83c88!important;
 	color: #fff!important
-
-
 
 }
 
@@ -988,18 +987,15 @@ form.inline + form.inline,
 .cbi-input-reload,
 .cbi-button-reload {
 	color: #fff !important;
-	background-color: #337ab7 !important;
-	border-color: #2e6da4 !important
-
+	background-color: #337ab7!important;
+	border-color: #2e6da4 !important;
 }
 
 .cbi-input-apply,
 .cbi-button-apply,
 .cbi-button-edit {
-        color: #fff !important;
-	background-color: #5e72e4 !important;
-	background-color: var(--primary) !important;
-
+	color: #fff !important;
+	background-color: #5e72e4;
 }
 
 .cbi-input-reset,
@@ -1015,11 +1011,7 @@ form.inline + form.inline,
 }
 
 /* table */
-.cbi-section-table .cbi-section-table-titles .cbi-section-table-cell {
-  width: auto !important;
-  background-color: #e9ecef;
-  background-color: var(--lighter);
-}
+
 .tabs {
 	padding-left: 0.5rem;
 	background-color: #FFFFFF;
@@ -1403,12 +1395,6 @@ div.cbi-value-field{
 }
 
 /* select */
-.cbi-value-field .ifacebadge {
-  display: inline-flex;
-  border-bottom: 0px solid #CCCCCC;
-  padding: 0.5rem 1rem;
-  box-shadow: none;
-}
 .cbi-value-field .cbi-dropdown {
 	min-width: 15rem;
 }
@@ -1459,12 +1445,7 @@ td > .ifacebadge,
 }
 
 .network-status-table .ifacebox-body > span {
-  flex: 10 10 auto;
-  height: 100%;
-  line-height: 1.7em;
-  padding-left: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+	flex: 10;
 }
 
 .network-status-table .ifacebox-body > div {
@@ -1473,23 +1454,14 @@ td > .ifacebadge,
 }
 
 .network-status-table .ifacebox-body .ifacebadge {
+	flex: 1;
+	margin: .5em .25em 0;
+	padding: .5em;
 	min-width: 220px;
 	background-color: #eee;
-	flex: 1 1 auto;
 	align-items: center;
-	margin: 0;
-	padding: .5em
 }
-.ifacebox {
-  border: 1px solid #ccc;
-  border-radius: 0.375rem;
-  background-color: #f9f9f9;
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1.2em;
-  min-width: 100px;
-  overflow: hidden;
-}
+
 /*textarea*/
 
 .cbi-input-textarea {
@@ -1632,27 +1604,30 @@ td > .ifacebadge,
 	padding: .25em;
 }
 
+.ifacebox strong {
+	color:#3d3c3b
+}
+
 .cbi-image-button {
-	margin: 5px 10px
+	margin: 5px 10px;
 }
 
 .zonebadge {
+	padding: 0.2rem 0.5rem;
 	display: inline-block;
 	cursor: pointer;
-	white-space: normal;
-	padding: .2rem .5rem
 }
 
-.zonebadge .ifacebadge {
-	border: 1px solid #6c6c6c;
-	margin: .3rem;
-	padding: .2rem 1rem
+.zonebadge > .ifacebadge {
+	padding: .2rem .3rem;
+	margin: 0.1rem 0.2rem;
+	border: 1px solid #6C6C6C;
 }
 
-.zonebadge>input[type=text] {
-	margin-top: .3rem;
+.zonebadge > input[type="text"] {
+	padding: 0.16rem 1rem;
 	min-width: 10rem;
-	padding: .16rem 1rem
+	margin-top: 0.3rem;
 }
 
 .zonebadge > em,
@@ -1663,9 +1638,7 @@ td > .ifacebadge,
 
 .cbi-value-field .cbi-input-checkbox,
 .cbi-value-field .cbi-input-radio {
-  margin: 0.9rem 0.25rem 0 0.25rem;
-  height: 1rem;
-  line-height: 1.6;
+	vertical-align: middle;
 }
 
 .cbi-value-field > input + .cbi-value-description {
@@ -1697,13 +1670,10 @@ td > .ifacebadge,
 .cbi-section-create > .cbi-button-add {
 	margin: 0.5rem;
 }
-.cbi-section-actions {
-	text-align: right
-}
 
-div.cbi-value var,div.td.cbi-value-field var,td.cbi-value-field var {
-	color: #0069d6;
-	font-style: italic
+div.cbi-value var, td.cbi-value-field var, .td.cbi-value-field var {
+	font-style: italic;
+	color: #0069D6;
 }
 
 small {
@@ -1711,68 +1681,19 @@ small {
 	white-space: normal;
 }
 
-.cbi-button-down,.cbi-button-up {
+.cbi-button-up,
+.cbi-button-down {
 	display: inline-block;
 	min-width: 0;
+	padding: 0.2rem 0.3rem;
 	font-size: 10pt;
-	padding: .2rem .3rem
 }
 
 .cbi-optionals {
-	border-top: 1px solid #ccc;
-	padding: 1rem 1rem 0
+	padding: 1rem 1rem 0 1rem;
+	border-top: 1px solid #CCC;
 }
 
-.cbi-tooltip-container {
-	cursor: help
-}
-
-.cbi-tooltip {
-	position: absolute;
-	left: -750pt;
-	z-index: 1000;
-	box-shadow: 0 0 2px #444;
-	opacity: 0;
-	transition: opacity .25s ease-out;
-	pointer-events: none
-}
-
-.cbi-tooltip-container:hover .cbi-tooltip {
-	left: auto;
-	opacity: 1;
-	transition: opacity .25s ease-in
-}
-
-.zonebadge .cbi-tooltip {
-	background: inherit;
-	margin: -1.5rem 0 0 -.5rem;
-	padding: .25rem
-}
-
-.zonebadge-empty {
-	background: repeating-linear-gradient(45deg,hsla(0,0%,80%,.5),hsla(0,0%,80%,.5) 5px,hsla(0,0%,100%,.5) 5px,hsla(0,0%,100%,.5) 10px);
-	color: #404040
-}
-
-.zone-forwards {
-	display: flex;
-	min-width: 10rem
-}
-
-.zone-forwards>* {
-	flex: 1 1 45%
-}
-
-.zone-forwards>span {
-	text-align: center;
-	flex-basis: 10%;
-	padding: 0 .25rem
-}
-
-.zone-forwards .zone-dest,.zone-forwards .zone-src {
-	display: flex;
-	flex-direction: column
-}
 #diag-rc-output > pre {
 	background-color: #f5f5f5;
 	display: block;
@@ -1786,14 +1707,16 @@ small {
 	color: #3d3c3b;
 }
 
-input[name=nslookup],input[name=ping],input[name=traceroute] {
-	width: 80%
+input[name="ping"],
+input[name="traceroute"],
+input[name="nslookup"] {
+	width: 80%;
 }
 
 header > .container > .pull-right > * {
 	position: relative;
-	top: .45rem;
-	cursor: pointer
+	top: 0.45rem;
+	cursor: pointer;
 }
 
 #xhr_poll_status > .label.success {
@@ -1815,7 +1738,9 @@ header > .container > .pull-right > * {
 	text-decoration: none;
 }
 
-
+.notice {
+	background-color: #ef6b2d!important
+}
 
 .showSide:before {
 	position: relative;
@@ -1917,14 +1842,6 @@ header > .container > .pull-right > * {
     margin: 0.1rem 1.5rem 0 0
 }
 
-.cbi-map fieldset h3 {
-	padding: 10px 0;
-}
-
-.cbi-map fieldset ul li {
-	background: #f7f7f7;
-	margin-right: 0 !important;
-}
 /* fix system reboot */
 
 .node-system-reboot > .main > .main-right p,
@@ -2008,17 +1925,6 @@ header > .container > .pull-right > * {
 	min-width: 3.5rem;
 }
 
-@keyframes anim-rotate {
-	0% {
-		-webkit-transform: rotate(0);
-		transform: rotate(0)
-	}
-
-	to {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg)
-	}
-}
 
 /* language fix */
 body.lang_pl.node-main-login .cbi-value-title {
@@ -2068,7 +1974,13 @@ body.lang_pl.node-main-login .cbi-value-title {
 }
 
 @media screen and (max-width: 1280px) {
+	header {
+        /*height: 3.5rem;*/
+	}
 
+	header > .container {
+        /*margin-top: 0.25rem;*/
+	}
 
 	.main {
 		top: 3.5rem;
@@ -2116,35 +2028,33 @@ body.lang_pl.node-main-login .cbi-value-title {
 		height: 3.5rem;
 	}
 
-	header>.container>.brand {
-		padding-right: 20px;
-		padding-left: 5px;
-		width: 15rem;
-		height: 3.5rem;
+	header > .container > .brand {
 		font-size: 18px;
-		line-height: 3.5rem
+		height: 3.5rem;
+		line-height: 3.5rem;
+		width: calc(0% + 15rem);
+        /*width: initial;*/
+		padding-left: 5px;
+		padding-right: 20px;
 	}
 
 	.main-left {
+		width: 0;
 		position: fixed;
 		z-index: 100;
-		width: 0
 	}
 
-	.main-left,.main-right {
-		-webkit-overflow-scrolling: touch
-	}
-
-	.main-right,.showSide {
-		width: 100%
+	.main-right {
+		width: 100%;
 	}
 
 	.showSide {
-		position: absolute;
-		display: inline-block;
-		height: 100%;
 		margin: 0;
-		padding: 0
+		padding: 0;
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
 	}
 
 	.showSide:before {
@@ -2186,22 +2096,11 @@ body.lang_pl.node-main-login .cbi-value-title {
 		font-size: 1.2rem;
 	}
 
-	.node-main-login>.main .cbi-value-title {
-		text-align: left
+	.node-main-login > .main .cbi-value-title {
+		text-align: left;
 	}
+}
 
-	.node-network-diagnostics>.main .cbi-map fieldset>div,.node-network-diagnostics>.main .cbi-map fieldset>div * {
-		width: 100%!important
-	}
-}
-@media screen and (max-width:1050px) {
-	#wifi_assoclist_table {
-		position: relative;
-		display: -webkit-inline-box;
-		overflow-x: auto;
-		white-space: nowrap
-	}
-}
 @media screen and (max-width: 480px) {
 	fieldset {
 		padding: 1rem;
@@ -2382,122 +2281,6 @@ body.lang_pl.node-main-login .cbi-value-title {
 
 	.node-status-iptables > .main div > .cbi-map > form input[type="submit"] + input[type="submit"] {
 		margin-top: 1rem;
-	}
-}
-
-@media screen and (max-width:1200px) {
-	.tabs {
-		margin: 0 -1rem
-	}
-
-	#maincontent>.container {
-		margin: 0 1rem 1.5rem
-	}
-
-	.cbi-value-title {
-		display: block;
-		margin-top: 1rem;
-		margin-bottom: .5rem;
-		width: 100%;
-		min-width: 0!important;
-		text-align: left
-	}
-
-	.cbi-value>.cbi-value-field {
-		display: inline-block
-	}
-
-	.cbi-tabmenu>li,.tabs>li {
-		padding: .6rem 0
-	}
-
-	.cbi-tabmenu>li>a,.tabs>li>a {
-		font-size: .9rem;
-		padding: .2rem .3rem
-	}
-
-	.node-main-login>.main .container {
-		padding: .5rem 1rem 2rem
-	}
-
-	.node-main-login>.main .cbi-value {
-		padding: 0
-	}
-
-	.node-main-login>.main form>div:nth-last-child(1) {
-		margin-top: 2rem
-	}
-
-	.node-main-login>.main .cbi-value-title {
-		width: 100%!important;
-		font-size: 1.2rem
-	}
-
-	.node-main-login>.main fieldset {
-		margin: 0;
-		padding: .5rem
-	}
-
-	h2 {
-		font-size: 2rem
-	}
-
-	.panel-title {
-		padding-bottom: 1rem;
-		font-size: 1.4rem
-	}
-
-	.node-system-packages>.main .cbi-value.cbi-value-last>div {
-		width: 100%!important
-	}
-
-	.node-status-iptables>.main div>.cbi-map>form {
-		position: static!important;
-		overflow-x: auto;
-		overflow-y: hidden;
-		min-width: inherit;
-		border: 0;
-		border-radius: 0;
-		background-color: #fff;
-		box-shadow: 0 2px 2px 0 rgba(0,0,0,.16),0 0 2px 0 rgba(0,0,0,.12);
-		font-weight: 400;
-		font-style: normal;
-		font-family: inherit;
-		line-height: 1;
-		-webkit-overflow-scrolling: touch;
-		margin: 0 0 2rem;
-		padding: 2rem
-	}
-
-	.node-status-iptables>.main div>.cbi-map>form input[type=submit] {
-		width: 100%!important;
-		margin: 0
-	}
-
-	.node-status-iptables>.main div>.cbi-map>form input[type=submit]+input[type=submit] {
-		margin-top: 1rem
-	}
-
-	.cbi-section,.cbi-section-node,fieldset {
-		overflow-x: auto;
-		margin: 1rem 0 0;
-		padding: 1rem
-	}
-
-	.main>.main-left>.nav>.slide>.menu,.main>.main-left>.nav>.slide>.slide-menu>li>a,.main>.main-left>.nav>li>a[data-title=KoolSoft],.main>.main-left>.nav>li>a[data-title=Logout] {
-		font-size: 1.1rem
-	}
-
-	.cbi-value-description,.cbi-value-field,.node-system-packages>.main .cbi-value .cbi-value-field input {
-		width: 100%
-	}
-
-	.cbi-page-actions>div>input,.mobile-hide {
-		display: none
-	}
-
-	.tabs>li>a,input,select {
-		font-size: .9rem
 	}
 }
 
