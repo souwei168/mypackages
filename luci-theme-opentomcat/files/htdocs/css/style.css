@@ -1,12 +1,5 @@
 @font-face {
     font-family: 'Roboto';
-    src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/Roboto-Medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Roboto';
     src: local('Roboto'), local('Roboto Regular'), local('Roboto-Regular'), url('../fonts/Roboto-Regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -187,7 +180,8 @@ body,html {
 }
 
 body,body div,html {
-	line-height: 150%
+	line-height: 150%;
+	background-color: #F7F7F7;
 }
 
 a {
@@ -212,9 +206,10 @@ select {
 	height: 34px;
 	outline-style: none;
 	border: 1px solid #e4eaec;
-	border-radius: 3px;
+	border-radius: 5px;
 	background-color: #fff;
 	color: #007d65;
+	color: var(--primary);
 	vertical-align: baseline;
 	font-size: 10pt;
 	font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
@@ -397,23 +392,26 @@ header>.container>.brand,header > .fill > .container > .brand {
 	color: #fff;
 	color: var(--primary);
 	text-align: center;
-	padding-left: 0;
+	font-family:Roboto!important;
+	padding-right: 20px;
 	text-decoration: none;
-	font-size: 1.4rem;
+	font-size: 1.5rem;
 	line-height: 60px;
-	cursor: default
+	cursor: default;
 	vertical-align: text-bottom;
-	white-space: nowrap
+	white-space: nowrap;
+	font-weight:normal !important;
 }
 
 header>.container>a[class=brand]:after,header > .fill > .container > a[class="brand"]:after {
 	position: absolute;
-	top: -10px;
-	font-weight: 400!important;
-	font-size: 14px;
-	font-family: Tahoma
+	content:"TM";
+	font-size:0.8rem;
+	font-family:Tahoma;
+	position: absolute;
+	top:-10px;
+	font-weight:normal !important;
 }
-
 .danger {
 	background-color: #FA8072 !important;
 	color: #000
@@ -820,6 +818,7 @@ fieldset > fieldset {
 	padding: 0;
 	border: none;
 	box-shadow: none;
+	background-color: #F7F7F7;
 }
 
 .panel-title {
@@ -930,7 +929,8 @@ td > table > tbody > tr > td,
 	width: auto!important;
 	border: none;
 	border-radius: .2rem;
-	background-color: #fe7a00;
+	background-color: #ca367e;
+	border-color: #ca367e;
 	background-image: none;
 	color: #fff;
 	text-align: center;
@@ -974,8 +974,9 @@ form.inline + form.inline,
 
 .cbi-button-reset,
 .cbi-input-remove {
-	background-color:  #d83c88!important;
-	color: #fff!important
+	background-color:  #f80606;
+	border-color: #e30404;
+	color: #fff !important;
 
 }
 
@@ -987,23 +988,47 @@ form.inline + form.inline,
 .cbi-input-reload,
 .cbi-button-reload {
 	color: #fff !important;
-	background-color: #337ab7!important;
-	border-color: #2e6da4 !important;
+	background-color: #337ab7;
+	border-color: #2e6da4;
 }
-
+.cbi-input-find,
+.cbi-button-add,
+.cbi-button-find{
+	color: #fff !important;
+	background-color: #de5637;
+	border-color: #d05033;
+}
 .cbi-input-apply,
 .cbi-button-apply,
 .cbi-button-edit {
+	color: #fff !important;	
+	background-color: #f36c21;
+	border-color: #f3603e;
+}
+
+.cbi-input-apply:hover,
+.cbi-button-apply:hover,
+.cbi-button-edit :hover,
+.cbi-button-link:hover,
+.cbi-input-find:hover,
+.cbi-input-save:hover,
+.cbi-button-add:hover,
+.cbi-button-save:hover,
+.cbi-button-find:hover,
+.cbi-input-reload:hover,
+.cbi-button-reload:hover{
 	color: #fff !important;
-	background-color: #5e72e4;
+	outline: 0;
+	background-color: rgba(0,0,0,.87);
+	text-decoration: none
 }
 
 .cbi-input-reset,
+.cbi-button-remove,
 .cbi-section-remove>.cbi-button,
-.cbi-button-remove {
+ {
 	color: #fff !important;
-	border-color: #2e6da4!important
-	border-color: #2e6da4!important
+	border-color: #2e6da4
 }
 
 .a-to-btn {
@@ -1055,28 +1080,27 @@ form.inline + form.inline,
 }
 
 .cbi-tabmenu {
-	border-top: 1px solid #e4eaec;
+	/*border-top: 1px solid #e4eaec;
 	border-left: 1px solid #e4eaec;
-	border-right: 1px solid #e4eaec;
+	border-right: 1px solid #e4eaec;*/
 	background-color: #F7F7F7;
-}
-
-
-.cbi-tabmenu {
     color: white;
     padding: 0.5rem 1rem 0 1rem;
+	
 }
 
+
+
 .cbi-tabmenu > li:hover {
-    background-color: #F1F1F1;
+	background-color: #CFCFCF;
+	
 }
 .cbi-tabmenu > li:hover  > a{
     color: #525f7f;
 }
 
 .cbi-tabmenu > li[class~="cbi-tab"] {
-
-    background-color: #fb6340;
+	background-color: #f36c21;
 }
 .cbi-tabmenu > li[class~="cbi-tab"] > a{
     color: #fff;
@@ -1084,13 +1108,16 @@ form.inline + form.inline,
 
 .cbi-section-remove:nth-of-type(2n),
 .cbi-section-node:nth-of-type(2n){
-    background-color: #f9f9f9;
+	background-color: #F7F7F7;
 }
 .cbi-section-node-tabbed {
     padding: 0;
     margin-top: 0;
 
 }
+.cbi-tab-descr{
+	padding: 1rem 1rem 0 1rem;
+	}
 .cbi-section-node{
     background: #fff;
     border: 0;
@@ -1099,7 +1126,7 @@ form.inline + form.inline,
     box-shadow: 0 0 0rem 0 rgba(136,152,170,.15);
     overflow-x: auto;
     overflow-y: hidden;
-	padding:0.5rem 0;
+	padding:0;
 }
 #cbi-network-lan.cbi-section-node{
     overflow-x:visible;
@@ -1137,7 +1164,7 @@ div.cbi-value-field{
 }
 
 .cbi-value-description {
-	font-size: small;
+	font-size: small !important;
 	opacity: 0.5;
 	padding: 0.5rem;
 }
@@ -1465,21 +1492,20 @@ td > .ifacebadge,
 /*textarea*/
 
 .cbi-input-textarea {
-    color: #76838f;
-    padding: 6px 10px;
-    margin: 0;
-    line-height: normal;
-    font-size: 10pt;
-    font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
-    border: 1px solid #e4eaec;
-    background-color: #fff;
-    transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
-    -webkit-transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
-    outline-style: none;
-    vertical-align: baseline;
-    border-radius: 3px;
-}
-
+	color: #737678;
+	padding: 6px 10px;
+	margin: 0;
+	line-height: normal;
+	font-size: 10pt;
+	font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
+	border: 1px solid #e4eaec;
+	background-color: #fff;
+	transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+	-webkit-transition: color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+	outline-style: none;
+	vertical-align: baseline;
+	border-radius: 3px;
+	}
 #syslog {
 	width: 100%;
 	min-height: 15rem;
@@ -1592,6 +1618,8 @@ td > .ifacebadge,
 .ifacebox-head {
 	padding: .25em;
 	background: #eee;
+	color:  #fff;
+	color: var(--primary);
 }
 
 .ifacebox-head.active {
@@ -1605,7 +1633,7 @@ td > .ifacebadge,
 }
 
 .ifacebox strong {
-	color:#3d3c3b
+	color:#3d3c3b!important;
 }
 
 .cbi-image-button {
@@ -1963,11 +1991,7 @@ body.lang_pl.node-main-login .cbi-value-title {
 	fieldset {
 		padding: 1rem;
 	}
-
-	.cbi-input-textarea {
-		font-size: small;
-	}
-
+	
 	.node-status-iptables > .main fieldset li > a {
 		padding: 0.3rem 0.6rem;
 	}
