@@ -1599,31 +1599,33 @@ td > .ifacebadge,
 	border-top: none !important;
 }
 .ifacebox {
-	border: 1px solid #ccc;
-	border-radius: .375rem;
-	background-color: #f9f9f9;
-	display: inline-flex;
-	flex-direction: column;
-	line-height: 1.2em;
-	min-width: 100px;
-	overflow: hidden
+
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    background-color: #f9f9f9;
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.2em;
+    min-width: 100px;
+    overflow: hidden;
 }
+
 .ifacebox-head {
-	padding: 1rem;
-	background: #90f090
+    padding: 1rem;
 }
+
 .ifacebox-head.active {
-	background: #5e72e4;
-	background: var(--primary);
-	color: #fff
+    background: #eee;
 }
 
 .ifacebox-body {
-	padding: .25em;
+    padding: 0.5em;
 }
 
-.ifacebox strong {
+.ifacebox ifacebox-head strong,
+.ifacebox-head strong {
 	color:#3d3c3b!important;
+	display:  inline;
 }
 
 .cbi-image-button {
