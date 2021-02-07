@@ -1,69 +1,66 @@
 [![若部分图片无法正常显示，请挂上机场浏览或点这里到末尾看修复教程](https://visitor-badge.glitch.me/badge?page_id=sirpdboy-visitor-badge)](#解决-github-网页上图片显示失败的问题) [![](https://img.shields.io/badge/TG群-点击加入-FFFFFF.svg)](https://t.me/joinchat/AAAAAEpRF88NfOK5vBXGBQ)
 <a href="#readme">
-    <img src="https://img.vim-cn.com/7f/270400123d9c4385c11d0aed32979f35d80578.png" alt="图飞了😂" title="opentopd" align="right" height="180" />
+    <img src="https://img.vim-cn.com/69/df015dc73fc71da07c3264766e8032ac042fed.png" alt="图飞了😂" title="poweroffdevice" align="right" height="180" />
 </a>
+
 欢迎来到sirpdboy的源码仓库！
 =
 Welcome to sirpdboy's  git source of packages
 -
-[luci-theme-opentopd  thme openwrt主题](https://github.com/sirpdboy/luci-theme-opentopd)
--
+[poweroffdevice 设备关机功能](luci-app-poweroffdevice)
+==========================================
 
-[![](https://img.shields.io/badge/-目录:-696969.svg)](#readme) [![](https://img.shields.io/badge/-编译说明-F5F5F5.svg)](#编译说明-) [![](https://img.shields.io/badge/-捐助-F5F5F5.svg)](#捐助-) 
+[![](https://img.shields.io/badge/-目录:-696969.svg)](#readme) [![](https://img.shields.io/badge/-使用说明-F5F5F5.svg)](#使用说明-) [![](https://img.shields.io/badge/-说明-F5F5F5.svg)](#说明-) [![](https://img.shields.io/badge/-捐助-F5F5F5.svg)](#捐助-) 
 
 请 **认真阅读完毕** 本页面，本页面包含注意事项和如何使用。
 
-opentopd是一款基于luci-theme-material构建,使用HTML5、CSS3编写的Luci主题。
+poweroffdevice是一款基于OPNEWRT编译的关机源码插件。
 -
 
 ## 写在前面：
 
-    这个主题是为sirpdboy（基于OpenWrt，专门为家庭使用场景设计的固件）专门设计的，也可以用于OpenWrt其他版本.
-	
-	目前兼容Luci18，Luci其他版本计划在此版本稳定后开发。
+    这个关机功能最早使用者是KOOLSHARE的固件。苦于OPENWRT中没有关机补丁，有感于前辈们的付出，苦思2020年4月动手在OPENWRT上首次使用此插件，此源码源于官方源码重启的源码修改而来.
+之前一直有朋友在问，怎么使用关机插件，关机插件是有二种使用方式。一种是下载插件编译，这相对来说占用资源多一点，另一种就是在系统的源码上修改。
 
-## 编译说明 [![](https://img.shields.io/badge/-编译说明-F5F5F5.svg)](#编译说明-) 
+## 使用说明 [![](https://img.shields.io/badge/-使用说明-F5F5F5.svg)](#使用说明-) 
 
-将opentopd 主题添加至 LEDE/OpenWRT 源码的方法。
+将poweroffdevice关机功能 添加至 LEDE/OpenWRT 源码的二种方法。
 
-## 下载源码方法一：
-编辑源码文件夹根目录feeds.conf.default并加入如下内容:
+## 使用关机功能方法一：
+标准方法使用关机插件。
 
-```Brach
-    # feeds获取源码：
-    src-git opentopd  https://github.com/sirpdboy/luci-theme-opentopd
- ``` 
-  ```Brach
-   # 更新feeds，并安装主题：
-    scripts/feeds update opentopd
-	scripts/feeds install luci-theme-opentopd
- ``` 	
-
-## 下载源码方法二：
  ```Brach
     # 下载源码
     
-    git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
+    git clone https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
     
     make menuconfig
  ``` 
-## 配置菜单
  ```Brach
+    # 配置菜单
     make menuconfig
-	# 找到 LuCI -> Themes, 选择 luci-theme-opentopd, 保存后退出。
+	# 找到 LuCI -> Applications, 选择 luci-app-poweroffdevice, 保存后退出。
  ``` 
-## 编译
  ```Brach 
     # 编译固件
-    make package/luci-app-opentopd/{clean,compile} V=s
+    make package/luci-app-poweroffdevice/{clean,compile} V=s
  ```
-![xm1](doc/登陆页面.jpg)
-![xm2](doc/实时监控.jpg)
-![xm3](doc/手机画面.jpg)
+## 使用关机功能方法二【推荐此方法】：
+系统的源码上修改，集成到系统源码菜单中，不需要另外选择和设置即可使用关机功能
+ ```Brach 
+    #在编译前,运行如下二条命令，集成到系统源码菜单中，不需要另外选择和设置即可使用关机功能。
+	cd openwrt #进入源码目录
+    curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
+    curl -fsSL  https://raw.githubusercontent.com/sirpdboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
+
+ ```
+
 
 ## 说明 [![](https://img.shields.io/badge/-说明-F5F5F5.svg)](#说明-)
 
-源码来源：https://github.com/sirpdboy/luci-theme-opentopd
+源码来源：https://github.com/sirpdboy/luci-app-poweroffdevice
+
+### 你可以随意使用其中的源码，但请注明出处。
 
 
 你可以随意使用其中的源码，但请注明出处。
